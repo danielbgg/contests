@@ -1,46 +1,75 @@
 package br.com.danielbgg.contests.uva.problem100;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.io.IOException;
+import java.util.StringTokenizer;
 
-/**
- * The 3n + 1 problem
- */
-public class Problem100 {
+class Problem100 {
 
-	public void algorithm(int min, int max) {
+	int calculateCycleLength(int a, int b) {
+		int max, min;
+		if (a >= b) {
+			max = a;
+			min = b;
+		} else {
+			max = b;
+			min = a;
+		}
 		int maxCycleLenght = 0;
 		for (int i = min; i <= max; i++) {
-			List l = new LinkedList();
-			algorithm2(l, i);
-			if (l.size() > maxCycleLenght) {
-				maxCycleLenght = l.size();
+			int maxIntermediateResult = algorithm(i);
+			if (maxIntermediateResult > maxCycleLenght) {
+				maxCycleLenght = maxIntermediateResult;
 			}
 		}
-		System.out.println(min + " " + max + " " + maxCycleLenght);
+		System.out.println(a + " " + b + " " + maxCycleLenght);
+		return maxCycleLenght;
 	}
 
-	private void algorithm2(List l, int value) {
-		l.add(value);
-		if (value == 1) {
-			return;
+	int algorithm(int value) {
+		int length = 0;
+		int newValue = value;
+		while (newValue > 1) {
+			length++;
+			if (newValue % 2 == 0) {
+				newValue = newValue / 2;
+			} else {
+				newValue = (3 * newValue) + 1;
+			}
 		}
-		if (value % 2 == 0) {
-			value = value / 2;
-		} else {
-			value = (3 * value) + 1;
+		return ++length;
+	}
+
+	static String readLn(int maxLg) {
+		byte lin[] = new byte[maxLg];
+		int lg = 0, car = -1;
+		try {
+			while (lg < maxLg) {
+				car = System.in.read();
+				if ((car < 0) || (car == '\n'))
+					break;
+				lin[lg++] += car;
+			}
+		} catch (IOException e) {
+			return (null);
 		}
-		algorithm2(l, value);
+		if ((car < 0) && (lg == 0))
+			return (null);
+		return (new String(lin, 0, lg));
 	}
 
-	public static void main(String[] args) {
-		Problem100 p100 = new Problem100();
-		p100.algorithm(1, 10);
-		p100.algorithm(100, 200);
-		p100.algorithm(201, 210);
-		p100.algorithm(900, 1000);
-		p100.algorithm(1, 110000);
+	public static void main(String args[]) {
+		Problem100 myWork = new Problem100();
+		myWork.begin();
 	}
-	
 
+	void begin() {
+		String input;
+		StringTokenizer idata;
+		while ((input = Problem100.readLn(255)) != null) {
+			idata = new StringTokenizer(input);
+			int a = Integer.parseInt(idata.nextToken());
+			int b = Integer.parseInt(idata.nextToken());
+			calculateCycleLength(a, b);
+		}
+	}
 }
