@@ -3,6 +3,11 @@ package br.com.danielbgg.contests.uva.problem100;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
+/**
+ * Problem 100
+ * 
+ * http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=36
+ */
 class Problem100 {
 
 	int calculateCycleLength(int a, int b) {
