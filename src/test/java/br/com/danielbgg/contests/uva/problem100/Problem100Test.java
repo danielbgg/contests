@@ -16,6 +16,7 @@ public class Problem100Test extends TestCase {
 
 	public void testApp() {
 		Problem100 p100 = new Problem100();
+		assertEquals(p100.calculateCycleLength(1, 22), 21);
 		assertEquals(p100.calculateCycleLength(1, 10), 20);
 		assertEquals(p100.calculateCycleLength(100, 200), 125);
 		assertEquals(p100.calculateCycleLength(201, 210), 89);

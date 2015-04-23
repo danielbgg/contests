@@ -6,6 +6,8 @@ import java.util.StringTokenizer;
 /**
  * Problem 100
  * 
+ * The 3n + 1 problem
+ * 
  * http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=36
  */
 class Problem100 {
@@ -70,7 +72,7 @@ class Problem100 {
 	void begin() {
 		String input;
 		StringTokenizer idata;
-		while ((input = Problem100.readLn(255)) != null) {
+		while ((input = readLn(255)) != null) {
 			idata = new StringTokenizer(input);
 			int a = Integer.parseInt(idata.nextToken());
 			int b = Integer.parseInt(idata.nextToken());
