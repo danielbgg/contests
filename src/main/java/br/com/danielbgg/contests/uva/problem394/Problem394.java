@@ -124,16 +124,19 @@ class Problem394 {
 		Content c = ((Content) dimensions.get(r.name));
 		for (int i = 0; i < r.indexes.length; i++) {
 			int index = r.indexes[i];
-			
-			int cd = c.size;
-			int a = (c.dimension[1][i] - c.dimension[0][i] + 1);
-			System.out.println(a);
-			
-	        
+			int B = c.baseAddress;
+			int D = c.dim;
+			int Ld = c.dimension[0][i];
+			int Ud = c.dimension[1][i];
+			int CD = c.size;
+			int C0 = B - CD*Ld;
+			System.out.println(C0 + index);
         }
 		
 		return null;
 	}
+	
+	
 	
 
 	public static void main(String args[]) {
