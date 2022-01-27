@@ -1,0 +1,23 @@
+{
+  "name": "contests",
+  "version": "1.0.0",
+  "description": "Contests for sites as TopCoder, HackerRank, UVa, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielbgg/contests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielbgg/contests/issues"
+  },
+  "homepage": "https://github.com/danielbgg/contests#readme",
+  "dependencies": {
+    "csv-load-sync": "^2.3.1"
+  }
+}
